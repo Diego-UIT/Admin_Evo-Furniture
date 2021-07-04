@@ -69,8 +69,8 @@
             <!-- Main Content -->
             <div id="content">
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                 <!-- Topbar -->
+                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <form class="form-inline">
@@ -280,67 +280,40 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">All Users</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Update Product</h1>
                     </div>
 
-                    <!-- DataTales Example -->
+                    <!-- New Booking Form Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-secondary">All Users</h6>
+                            <h6 class="m-0 font-weight-bold text-secondary">Update Product</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-
-                                <a href="new-booking.html" class="btn btn-light btn-icon-split mb-3 add-button"
-                                data-toggle="modal" data-target="#addUserModal">
-                                    <span class="icon text-gray-600">
-                                        <i class="fas fa-arrow-right"></i>
-                                    </span>
-                                    <span class="text">ADD NEW</span>
-                                </a>
-                               
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Email</th>
-                                            <th>Avatar</th>
-                                            <th>Role</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Email</th>
-                                            <th>Avatar</th>
-                                            <th>Role</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <img style="width: 60px; height: 60px; border-radius: 50%;" src="./img/user1.jpg" alt="">
-                                            </td>
-                                            <td>4444565756</td>
-                                            <td>rajesh@gmail.com</td>
-                                            <td>1</td>
-                                            <td class="d-flex justify-content-around">
-                                                <a href="./updateUser.html" class="update-btn">
-                                                    <i class="fa fa-wrench fa-lg action" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="/adminUser/delete" data-id="" class="delete-btn">
-                                                    <i class="fa fa-trash fa-lg action" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                        </tr>  
-                                    </tbody>
-                                </table>
-                            </div>
+                            <form action="" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input name="Id" type="Id" class="form-control" id="exampleInputId"
+                                        placeholder="101" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <img src="./img/gia-sach-go.jpg" alt="" style="height: 100px; width: 100px; border-radius: 50%;">
+                                    <input name="image" type="file" class="form-control" id="exampleInputImage"
+                                        placeholder="Image">
+                                </div>
+                                <div class="form-group"> 
+                                    <input name="name" type="text" class="form-control" id="exampleInputEmail"
+                                        placeholder="Giá sách gỗ tự nhiên thiết kế đẹp">
+                                </div>
+                                <div class="form-group">
+                                    <input name="price" type="text" class="form-control" id="exampleInputPassword"
+                                        placeholder="13.990.000₫">
+                                </div>
+                            </form>
+                            <div class="col-lg-12 mt-3 text-center">
+                                <a name="updateUser" class="btn btn-success">Submit</a>
+                                <a href="./products.html" class="btn btn-secondary">Close</a>
+                            </div> 
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -351,7 +324,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Design by &copy; Team 5 / 2020</span>
+                        <span>Design &copy; Team 5 / 2020</span>
                     </div>
                 </div>
             </footer>
@@ -383,75 +356,6 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Add User Modal-->
-    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="modal-form form-create" action="/adminuser/create" method="POST">
-                        <div class="form-group">
-                            <input name="email" type="email" class="form-control" id="exampleInputPassword"
-                                placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <input name="password" type="password" class="form-control" id="exampleInputPassword"
-                                placeholder="Password">
-                        </div>
-                        <select name="role" multiple class="form-control" id="select1">
-                            <option Selected value="user">User</option>
-                            <option value="admin">Admin</option>
-                        </select>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Submit</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Update User Modal-->
-    <div class="modal fade" id="updateUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="/adminuser/update" method="POST" class="update-form">
-                        <label style="display: none" for="" class="getId"></label>
-                        <div class="form-group">
-                            <input value="" name="email" type="email" class="form-control" id="exampleInputPassword1"
-                                placeholder="Email" disabled>
-                        </div>
-                        <select name="level" class="form-control" id="select2">
-                            <option class="update-option1" value='0'>User</option>
-                            <option class="update-option2" value='1'>Admin</option>
-                        </select>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <div class="modal-footer">
-                        <button name="updateUser" type="submit" class="btn btn-success">Submit</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
                 </div>
             </div>
         </div>
